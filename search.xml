@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title></title>
+      <url>%2F2017%2F04%2F25%2F%E5%88%86%E7%B1%BB%E6%B5%8B%E8%AF%95%2F</url>
+      <content type="text"><![CDATA[title: 分类测试date: 2017-04-25 09:13:13tags: 测试categories: test—这是用来测试分类页面是否有用。 public static void main(String[] args){ System.out.println(“代码块”) }顺别也测试下代码块的样式]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[test]]></title>
       <url>%2F2017%2F04%2F21%2Ftest%2F</url>
       <content type="text"><![CDATA[正文内容，这是测试，helloWord]]></content>
