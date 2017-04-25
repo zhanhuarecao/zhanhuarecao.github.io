@@ -3,30 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[代码高亮]]></title>
-      <url>%2F2017%2F04%2F25%2F%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%2F</url>
-      <content type="text"><![CDATA[可以不行 public static void main(String[] args){ System.out.println(&quot;高亮&quot;); } 发 发生的非法]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[分类测试]]></title>
-      <url>%2F2017%2F04%2F25%2F%E5%88%86%E7%B1%BB%E6%B5%8B%E8%AF%95%2F</url>
-      <content type="text"><![CDATA[这是用来测试分类页面是否有用。 public static void main(String[] args){ System.out.println(“代码块”) }顺别也测试下代码块的样式]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[test]]></title>
-      <url>%2F2017%2F04%2F21%2Ftest%2F</url>
-      <content type="text"><![CDATA[正文内容，这是测试，helloWord]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F04%2F20%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <title><![CDATA[hexo+github搭建博客总结]]></title>
+      <url>%2F2017%2F04%2F25%2Fhexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93%2F</url>
+      <content type="text"><![CDATA[最近由于由于CSDN上的博客需要手机上行验证登录，然后发现了hexo+github构建博客逼格较高。so，按照网上的帖子实践了一番，有些坑要在这里记录一下。 ####坑一：为博客添加评论由于我的主题使用的是next，而next官方文档推荐的一些第三方评论都有一些些问题。多说马上就要停服了，网易云跟帖注册的时候一直提示url或站点名称已经存在，国外的又要翻墙，新浪畅言还要备案。所以找来找去找到了友言。注册号好appkey后，本地调试没有问题，上传到GitHub上，没有显示，折腾了半天也找不到原因，无奈只得选择放弃。然后我又把目光投向来必力，一番注册后，终于成功。详细过程如下：在管理页面–代码管理中找到自己的key，即data-uid的值。复制该值，找到主题配置文件的livere_uid，放开注释，然后把key粘贴过来，clean，g，d后就可以了。 ####坑二：为博客添加分享看到别人的博客里面都有个分享，试过ShareSDK，本地调试完全正常，上传到GitHub，效果无法显示，无奈之下又试了百度分享。本地调试ok，上传到GitHub，依然无法显示，页面F12，看到div都在那里，图标及点击事件都无法显示。。。无奈只得放弃（自我安慰：反正我这腊鸡内容也没人分享，就不需要这个功能了吧）！ ####坑三：侧边栏优化为侧边栏添加显示所有的分类列表。在next/layout/_macro下的siderbar.swig添加以下代码： &lt;div class=&quot;category-page-count&quot; style=&quot;margin-top:40px;&quot;&gt; 目前共计{{ site.categories.length}}个分类 &lt;/div&gt; &lt;div class=&quot;category-all-page&quot;&gt; &lt;div class=&quot;category-all&quot;&gt; {{ list_categories({depth: 1}) }} &lt;/div&gt; &lt;/div&gt; 即可。]]></content>
     </entry>
 
     
