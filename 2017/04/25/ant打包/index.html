@@ -87,7 +87,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -103,16 +103,17 @@
 
 
 
-<meta name="description" content="google-site-verification: google029569e60e424634.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="詹花惹草">
-<meta property="og:url" content="http://yoursite.com/google029569e60e424634.html">
+<meta name="description" content="话不多说，直接上代码： public class ExecutorShell {   private Connection conn;  /** 远程机器IP */  private String ip;  /** 用户名 */  private String osUsername;  /** 密码 */  private String password;  private String char">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地Java代码执行服务器脚本">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/ant打包/index.html">
 <meta property="og:site_name" content="詹花惹草">
-<meta property="og:description" content="google-site-verification: google029569e60e424634.html">
-<meta property="og:updated_time" content="2017-04-25T06:24:21.304Z">
+<meta property="og:description" content="话不多说，直接上代码： public class ExecutorShell {   private Connection conn;  /** 远程机器IP */  private String ip;  /** 用户名 */  private String osUsername;  /** 密码 */  private String password;  private String char">
+<meta property="og:updated_time" content="2017-04-25T07:46:46.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="詹花惹草">
-<meta name="twitter:description" content="google-site-verification: google029569e60e424634.html">
+<meta name="twitter:title" content="本地Java代码执行服务器脚本">
+<meta name="twitter:description" content="话不多说，直接上代码： public class ExecutorShell {   private Connection conn;  /** 远程机器IP */  private String ip;  /** 用户名 */  private String osUsername;  /** 密码 */  private String password;  private String char">
 
 
 
@@ -140,19 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/google029569e60e424634.html"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/25/ant打包/"/>
 
 
 
 
 
-  <title>
-  
-
-  
-     | 詹花惹草
-  
-</title>
+  <title> 本地Java代码执行服务器脚本 | 詹花惹草 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -177,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -306,18 +301,268 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline"></h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/ant打包/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="詹花惹草">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/photo.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="詹花惹草">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                本地Java代码执行服务器脚本
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T15:17:28+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/25/ant打包/" class="leancloud_visitors" data-flag-title="本地Java代码执行服务器脚本">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-      google-site-verification: google029569e60e424634.html
-    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>话不多说，直接上代码：</p>
+<pre><code>public class ExecutorShell {
+
+ private Connection conn;
+ /** 远程机器IP */
+ private String ip;
+ /** 用户名 */
+ private String osUsername;
+ /** 密码 */
+ private String password;
+ private String charset = Charset.defaultCharset().toString();
+
+ private static final int TIME_OUT = 1000 * 5 * 60;
+
+
+ public ExecutorShell(String ip, String usr, String pasword) {
+      this.ip = ip;
+     this.osUsername = usr;
+     this.password = pasword;
+ }
+
+
+ //登录
+ private boolean login() throws IOException {
+     conn = new Connection(ip);
+     conn.connect();
+     return conn.authenticateWithPassword(osUsername, password);
+ }
+
+ //执行脚本
+ public List exec(String cmds) throws Exception {
+     InputStream stdOut = null;
+     InputStream stdErr = null;
+     String outStr = &quot;&quot;;
+     String outErr = &quot;&quot;;
+     int ret = -1;
+     ArrayList&lt;Object&gt; list = new ArrayList&lt;&gt;();
+     try {
+     if (login()) {
+         // Open a new {@link Session} on this connection
+         Session session = conn.openSession();
+         // Execute a command on the remote machine.
+         session.execCommand(cmds);
+
+         stdOut = new StreamGobbler(session.getStdout());
+         outStr = processStream(stdOut, charset);
+
+         stdErr = new StreamGobbler(session.getStderr());
+         outErr = processStream(stdErr, charset);
+
+         session.waitForCondition(ChannelCondition.EXIT_STATUS, TIME_OUT);
+
+        /* System.out.println(&quot;outStr=&quot; + outStr);
+         System.out.println(&quot;outErr=&quot; + outErr);*/
+
+         ret = session.getExitStatus();
+         //将脚本执行的返回值添加到list中
+         list.add(ret);
+         //将失败信息添加到list集合中
+         list.add(outErr);
+     } else {
+         throw new Exception(&quot;登录远程机器失败&quot; + ip);
+     }
+     } finally {
+         if (conn != null) {
+             conn.close();
+         }
+     }
+     return list;
+ }
+
+ //信息输出
+ private String processStream(InputStream in, String charset) throws Exception {
+     byte[] buf = new byte[1024];
+     StringBuilder sb = new StringBuilder();
+     while (in.read(buf) != -1) {
+         sb.append(new String(buf, charset));
+     }
+     return sb.toString();
+ }
+
+public static void main(String args[]) throws Exception {
+    ExecutorShell executor = new ExecutorShell(&quot;ip地址&quot;, &quot;登录名&quot;, &quot;密码&quot;);
+    executor.exec(脚本路径/脚本名称);
+}
+}
+</code></pre><p>executor执行后，如果返回值是0，说明脚本执行成功。如果不是0，则执行失败，可从list中取出，查看失败原因。</p>
+<p>如果，执行过程中，报“脚本没有权限的错误”，可在执行方法前先给脚本执行权限：</p>
+<pre><code>executor.exec(&quot;chmod 777 脚本路径/脚本名称&quot;);
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="詹花惹草 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/25/hexo-github搭建博客总结/" rel="prev" title="hexo+github搭建博客总结">
+                hexo+github搭建博客总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -367,7 +612,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -389,7 +634,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -544,6 +789,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
