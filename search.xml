@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[代码高亮]]></title>
+      <url>%2F2017%2F04%2F25%2F%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%2F</url>
+      <content type="text"><![CDATA[可以不行 public static void main(String[] args){ System.out.println(&quot;高亮&quot;); } 发 发生的非法]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[分类测试]]></title>
       <url>%2F2017%2F04%2F25%2F%E5%88%86%E7%B1%BB%E6%B5%8B%E8%AF%95%2F</url>
       <content type="text"><![CDATA[这是用来测试分类页面是否有用。 public static void main(String[] args){ System.out.println(“代码块”) }顺别也测试下代码块的样式]]></content>
